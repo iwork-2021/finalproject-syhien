@@ -92,14 +92,38 @@
         <!--关于-->
         <scene sceneID="QNa-C1-5X3">
             <objects>
-                <viewController id="Jp5-1U-rAg" sceneMemberID="viewController">
+                <viewController id="Jp5-1U-rAg" customClass="AboutViewController" customModule="l1stener" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OC6-EB-TjG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1y6-sQ-CKh">
+                                <rect key="frame" x="0.0" y="44" width="373" height="692"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TOM-ZT-Evq">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="692"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FmI-pp-LcR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1y6-sQ-CKh" firstAttribute="centerY" secondItem="FmI-pp-LcR" secondAttribute="centerY" id="PQk-wD-wBd"/>
+                            <constraint firstItem="1y6-sQ-CKh" firstAttribute="width" secondItem="FmI-pp-LcR" secondAttribute="width" multiplier="0.9" id="TZ9-ab-V6W"/>
+                            <constraint firstItem="1y6-sQ-CKh" firstAttribute="height" secondItem="FmI-pp-LcR" secondAttribute="height" multiplier="0.9" id="XwW-Iy-KgG"/>
+                            <constraint firstItem="1y6-sQ-CKh" firstAttribute="centerX" secondItem="FmI-pp-LcR" secondAttribute="centerX" id="jPy-WQ-GCo"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="关于" image="info.circle" catalog="system" id="3ND-nd-ggw"/>
+                    <connections>
+                        <outlet property="text" destination="TOM-ZT-Evq" id="dLC-7G-7pj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5c-R7-Sr4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,7 +150,7 @@
         <scene sceneID="nAE-Ps-xW6">
             <objects>
                 <navigationController id="Aev-iX-jT4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="库" image="music.house" catalog="system" id="Ubq-2Z-d8W"/>
+                    <tabBarItem key="tabBarItem" title="库" image="music.note.house" catalog="system" id="Ubq-2Z-d8W"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oWf-Dt-hVi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -142,9 +166,12 @@
     </scenes>
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="music.house" catalog="system" width="128" height="106"/>
+        <image name="music.note.house" catalog="system" width="128" height="106"/>
         <image name="music.quarternote.3" catalog="system" width="128" height="103"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
