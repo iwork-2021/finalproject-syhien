@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7C89E28C277AF5F000F0D43F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C89E28B277AF5F000F0D43F /* AboutViewController.swift */; };
+		7CEB62F1277C49A200DB3FC2 /* l1stenerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CEB62EF277C49A200DB3FC2 /* l1stenerModel.xcdatamodeld */; };
+		7CEB6316277C526100DB3FC2 /* CoreDataConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEB6315277C526100DB3FC2 /* CoreDataConnect.swift */; };
 		7CEC4A0427799B3500E05348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEC4A0327799B3500E05348 /* AppDelegate.swift */; };
 		7CEC4A0627799B3500E05348 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEC4A0527799B3500E05348 /* SceneDelegate.swift */; };
 		7CEC4A0B27799B3500E05348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEC4A0927799B3500E05348 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		7C89E28B277AF5F000F0D43F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		7CEB62F0277C49A200DB3FC2 /* l1stenerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = l1stenerModel.xcdatamodel; sourceTree = "<group>"; };
+		7CEB6315277C526100DB3FC2 /* CoreDataConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConnect.swift; sourceTree = "<group>"; };
 		7CEC4A0027799B3400E05348 /* l1stener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = l1stener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CEC4A0327799B3500E05348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CEC4A0527799B3500E05348 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +62,9 @@
 			children = (
 				7CEC4A0327799B3500E05348 /* AppDelegate.swift */,
 				7CEC4A0527799B3500E05348 /* SceneDelegate.swift */,
+				7CEB6315277C526100DB3FC2 /* CoreDataConnect.swift */,
 				7CEC4A0927799B3500E05348 /* Main.storyboard */,
+				7CEB62EF277C49A200DB3FC2 /* l1stenerModel.xcdatamodeld */,
 				7C89E28B277AF5F000F0D43F /* AboutViewController.swift */,
 				7CEC4A0C27799B3600E05348 /* Assets.xcassets */,
 				7CEC4A0E27799B3600E05348 /* LaunchScreen.storyboard */,
@@ -139,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C89E28C277AF5F000F0D43F /* AboutViewController.swift in Sources */,
+				7CEB62F1277C49A200DB3FC2 /* l1stenerModel.xcdatamodeld in Sources */,
 				7CEC4A0427799B3500E05348 /* AppDelegate.swift in Sources */,
 				7CEC4A0627799B3500E05348 /* SceneDelegate.swift in Sources */,
+				7CEB6316277C526100DB3FC2 /* CoreDataConnect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +368,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7CEB62EF277C49A200DB3FC2 /* l1stenerModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7CEB62F0277C49A200DB3FC2 /* l1stenerModel.xcdatamodel */,
+			);
+			currentVersion = 7CEB62F0277C49A200DB3FC2 /* l1stenerModel.xcdatamodel */;
+			path = l1stenerModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7CEC49F827799B3400E05348 /* Project object */;
 }

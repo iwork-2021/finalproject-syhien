@@ -24,6 +24,28 @@ class AboutViewController: UIViewController {
         textString.append(NSMutableAttributedString(string: "syhien@outlook.at", attributes: [NSMutableAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]))
         textString.append(NSAttributedString(string: "\n\n\n"))
         text.attributedText = textString
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let coreDataConnect = CoreDataConnect(context: context)
+        
+        print("测试一下core data")
+        let downloadTask = URLSession.shared.downloadTask(with: URL(string: "https://box.nju.edu.cn/f/f4a9a4d53b9e47e2a92d/?dl=1")!) { url, response, error in
+            guard let fileURl = url else { return }
+            do {
+                let documentsURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                let savedURL = documentsURL.appendingPathComponent(fileURl.lastPathComponent)
+                try FileManager.default.moveItem(at: fileURl, to: savedURL)
+                let music = try Data(contentsOf: savedURL)
+                if coreDataConnect.insert(data: music, fileName: "okinodokusama.wav", genre: "pop") {
+                    print("成功添加示例wav")
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        downloadTask.resume()
+        
+        print(FileManager.default.fileExists(atPath: "/2mix_Mst_okinodoku_off_Vocal_210307.wav"))
     }
     
 
