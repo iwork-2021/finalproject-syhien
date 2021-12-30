@@ -33,7 +33,8 @@ class AboutViewController: UIViewController {
             guard let fileURl = url else { return }
             do {
                 let documentsURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-                let savedURL = documentsURL.appendingPathComponent(fileURl.lastPathComponent)
+//                let savedURL = documentsURL.appendingPathComponent(fileURl.lastPathComponent)
+                let savedURL = documentsURL.appendingPathComponent("okinodokusama.wav")
                 try FileManager.default.moveItem(at: fileURl, to: savedURL)
                 let music = try Data(contentsOf: savedURL)
                 if coreDataConnect.insert(data: music, fileName: "okinodokusama.wav", genre: "pop") {
@@ -45,7 +46,6 @@ class AboutViewController: UIViewController {
         }
         downloadTask.resume()
         
-        print(FileManager.default.fileExists(atPath: "/2mix_Mst_okinodoku_off_Vocal_210307.wav"))
     }
     
 
