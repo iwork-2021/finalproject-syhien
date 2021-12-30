@@ -138,7 +138,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="导入"/>
                                 <connections>
-                                    <action selector="AddFromURL:" destination="051-xV-3KU" eventType="touchUpInside" id="gbp-Hn-lik"/>
+                                    <action selector="AddFromDevice:" destination="051-xV-3KU" eventType="touchUpInside" id="RCJ-0G-57K"/>
+                                    <action selector="AddFromURL:" destination="051-xV-3KU" eventType="touchUpInside" id="VVZ-Ir-ClA"/>
                                 </connections>
                             </button>
                         </subviews>

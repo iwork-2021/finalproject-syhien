@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import UniformTypeIdentifiers
 
-class AddMusicViewController: UIViewController {
+class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
     
     var coreDataConnect: CoreDataConnect! = nil
     var allTableView: UITableView?
@@ -42,11 +43,23 @@ class AddMusicViewController: UIViewController {
                     print("成功添加")
                 }
                 try FileManager.default.removeItem(at: savedURL)
+                DispatchQueue.main.async {
+                    self.allTableView?.reloadData()
+                }
             } catch {
                 print(error.localizedDescription)
             }
         }
         downloadTask.resume()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func AddFromDevice(_ sender: Any) {
+        var types = UTType.types(tag: "wav", tagClass: .filenameExtension, conformingTo: nil)
+        types.append(UTType(tag: "mp3", tagClass: .filenameExtension, conformingTo: nil)!)
+        let docPicker = UIDocumentPickerViewController(forOpeningContentTypes: types)
+        docPicker.delegate = self
+        self.show(docPicker, sender: nil)
     }
     
     /*
@@ -59,4 +72,13 @@ class AddMusicViewController: UIViewController {
     }
     */
 
+}
+
+extension AddMusicViewController {
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        let url = urls[0]
+        print(url)
+        print(url.absoluteURL)
+        print(url.absoluteString)
+    }
 }
