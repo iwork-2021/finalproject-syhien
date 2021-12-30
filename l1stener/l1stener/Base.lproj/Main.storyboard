@@ -70,6 +70,7 @@
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Nns-Fk-AgJ">
                             <connections>
                                 <action selector="testTouched:" destination="z5k-Kg-ePB" id="ROr-9h-iYn"/>
+                                <segue destination="051-xV-3KU" kind="show" id="UH6-7Z-fPG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -77,6 +78,104 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfw-bM-yEm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="741" y="-581"/>
+        </scene>
+        <!--导入音乐-->
+        <scene sceneID="rQA-we-zxr">
+            <objects>
+                <viewController title="导入音乐" id="051-xV-3KU" customClass="AddMusicViewController" customModule="l1stener" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9CS-Km-Tn2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="从互联网导入音乐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mau-hh-OJE">
+                                <rect key="frame" x="20" y="108" width="171" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL地址:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anR-9o-cWY">
+                                <rect key="frame" x="20" y="143.5" width="67" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rhM-f2-hqU">
+                                <rect key="frame" x="158" y="431" width="97" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="URLInputed:" destination="HpH-y3-LeQ" eventType="editingDidEnd" id="Gg6-pW-Uyb"/>
+                                    <action selector="inputFinished:" destination="HpH-y3-LeQ" eventType="editingDidEnd" id="H26-Kq-O39"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="另存为:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKj-Pw-PgK">
+                                <rect key="frame" x="186" y="437" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oNB-UB-903">
+                                <rect key="frame" x="158" y="431" width="97" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkI-Lr-wb0">
+                                <rect key="frame" x="341" y="296" width="53" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="导入"/>
+                                <connections>
+                                    <action selector="AddFromURL:" destination="051-xV-3KU" eventType="touchUpInside" id="ZJw-HG-pl3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="从设备导入音乐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHt-Th-XVv">
+                                <rect key="frame" x="20" y="435" width="150" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7B-C4-Ndv">
+                                <rect key="frame" x="341" y="432" width="53" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="导入"/>
+                                <connections>
+                                    <action selector="AddFromURL:" destination="051-xV-3KU" eventType="touchUpInside" id="gbp-Hn-lik"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EUL-mY-LHh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oNB-UB-903" firstAttribute="leading" secondItem="mau-hh-OJE" secondAttribute="leading" id="60c-6h-mYu"/>
+                            <constraint firstItem="GHt-Th-XVv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RkI-Lr-wb0" secondAttribute="bottom" constant="80" id="6m6-W3-rLT"/>
+                            <constraint firstItem="rhM-f2-hqU" firstAttribute="leading" secondItem="mau-hh-OJE" secondAttribute="leading" id="9tO-FB-8ce"/>
+                            <constraint firstItem="EUL-mY-LHh" firstAttribute="trailing" secondItem="RkI-Lr-wb0" secondAttribute="trailing" constant="20" id="Bvn-PG-ZFL"/>
+                            <constraint firstItem="EUL-mY-LHh" firstAttribute="trailing" secondItem="rhM-f2-hqU" secondAttribute="trailing" constant="20" id="KhQ-QV-Iae"/>
+                            <constraint firstItem="anR-9o-cWY" firstAttribute="leading" secondItem="mau-hh-OJE" secondAttribute="leading" id="MXr-fq-IT6"/>
+                            <constraint firstItem="R7B-C4-Ndv" firstAttribute="top" secondItem="GHt-Th-XVv" secondAttribute="bottom" constant="20" id="O8p-y0-uE0"/>
+                            <constraint firstItem="EUL-mY-LHh" firstAttribute="trailing" secondItem="KKj-Pw-PgK" secondAttribute="trailing" constant="20" id="TIQ-w8-6ei"/>
+                            <constraint firstItem="KKj-Pw-PgK" firstAttribute="leading" secondItem="mau-hh-OJE" secondAttribute="leading" id="VL1-Vl-GkB"/>
+                            <constraint firstItem="GHt-Th-XVv" firstAttribute="leading" secondItem="EUL-mY-LHh" secondAttribute="leading" constant="20" id="XM1-WZ-zbw"/>
+                            <constraint firstItem="KKj-Pw-PgK" firstAttribute="top" secondItem="rhM-f2-hqU" secondAttribute="bottom" constant="15" id="ZY5-aj-VgW"/>
+                            <constraint firstItem="rhM-f2-hqU" firstAttribute="top" secondItem="anR-9o-cWY" secondAttribute="bottom" constant="5" id="aa7-W1-3W7"/>
+                            <constraint firstItem="EUL-mY-LHh" firstAttribute="trailing" secondItem="R7B-C4-Ndv" secondAttribute="trailing" constant="20" id="bl0-Y5-1EK"/>
+                            <constraint firstItem="mau-hh-OJE" firstAttribute="top" secondItem="EUL-mY-LHh" secondAttribute="top" constant="20" id="jhi-qg-ECF"/>
+                            <constraint firstItem="oNB-UB-903" firstAttribute="top" secondItem="KKj-Pw-PgK" secondAttribute="bottom" constant="5" id="mnl-y7-6ze"/>
+                            <constraint firstItem="RkI-Lr-wb0" firstAttribute="top" secondItem="oNB-UB-903" secondAttribute="bottom" constant="20" id="pph-k8-ANH"/>
+                            <constraint firstItem="anR-9o-cWY" firstAttribute="top" secondItem="mau-hh-OJE" secondAttribute="bottom" constant="10" id="uln-Ig-pZN"/>
+                            <constraint firstItem="mau-hh-OJE" firstAttribute="leading" secondItem="EUL-mY-LHh" secondAttribute="leading" constant="20" id="vhW-Y7-XkL"/>
+                            <constraint firstItem="EUL-mY-LHh" firstAttribute="trailing" secondItem="oNB-UB-903" secondAttribute="trailing" constant="20" id="vtQ-07-8jT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="97s-ny-2ee"/>
+                    <connections>
+                        <outlet property="RenameInputField" destination="oNB-UB-903" id="PGI-jG-erL"/>
+                        <outlet property="URLInputField" destination="rhM-f2-hqU" id="35t-9u-wBf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qR-ng-nqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="HpH-y3-LeQ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="-581"/>
         </scene>
         <!--按流派分类-->
         <scene sceneID="pCi-A6-K4e">
