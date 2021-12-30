@@ -97,7 +97,4 @@ class AllTableViewController: UITableViewController {
     }
     */
 
-    @IBAction func testTouched(_ sender: Any) {
-        self.tableView.reloadData()
-    }
 }
