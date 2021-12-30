@@ -12,6 +12,7 @@
 		7C8B9FBF277D95AC0076D0F6 /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B9FBE277D95AC0076D0F6 /* MusicTableViewCell.swift */; };
 		7C8B9FC1277DA4BD0076D0F6 /* AddMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B9FC0277DA4BD0076D0F6 /* AddMusicViewController.swift */; };
 		7C8B9FC3277DD0310076D0F6 /* l1stenSoundClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B9FC2277DD0310076D0F6 /* l1stenSoundClassifier.mlmodel */; };
+		7C8B9FE9277DEF640076D0F6 /* RequestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B9FE8277DEF640076D0F6 /* RequestObserver.swift */; };
 		7CEB62F1277C49A200DB3FC2 /* l1stenerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CEB62EF277C49A200DB3FC2 /* l1stenerModel.xcdatamodeld */; };
 		7CEB6316277C526100DB3FC2 /* CoreDataConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEB6315277C526100DB3FC2 /* CoreDataConnect.swift */; };
 		7CEC4A0427799B3500E05348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEC4A0327799B3500E05348 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 		7C8B9FBE277D95AC0076D0F6 /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
 		7C8B9FC0277DA4BD0076D0F6 /* AddMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMusicViewController.swift; sourceTree = "<group>"; };
 		7C8B9FC2277DD0310076D0F6 /* l1stenSoundClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = l1stenSoundClassifier.mlmodel; path = ../../l1stenSoundClassifier.mlmodel; sourceTree = "<group>"; };
+		7C8B9FE8277DEF640076D0F6 /* RequestObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestObserver.swift; sourceTree = "<group>"; };
 		7CEB62F0277C49A200DB3FC2 /* l1stenerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = l1stenerModel.xcdatamodel; sourceTree = "<group>"; };
 		7CEB6315277C526100DB3FC2 /* CoreDataConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConnect.swift; sourceTree = "<group>"; };
 		7CEC4A0027799B3400E05348 /* l1stener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = l1stener.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,7 @@
 				7CEB6315277C526100DB3FC2 /* CoreDataConnect.swift */,
 				7CEC4A0927799B3500E05348 /* Main.storyboard */,
 				7C8B9FC0277DA4BD0076D0F6 /* AddMusicViewController.swift */,
+				7C8B9FE8277DEF640076D0F6 /* RequestObserver.swift */,
 				7CEB62EF277C49A200DB3FC2 /* l1stenerModel.xcdatamodeld */,
 				7C89E28B277AF5F000F0D43F /* AboutViewController.swift */,
 				7CEC4A0C27799B3600E05348 /* Assets.xcassets */,
@@ -165,6 +168,7 @@
 				7C8B9FBF277D95AC0076D0F6 /* MusicTableViewCell.swift in Sources */,
 				7CEC4A0627799B3500E05348 /* SceneDelegate.swift in Sources */,
 				7CEB6316277C526100DB3FC2 /* CoreDataConnect.swift in Sources */,
+				7C8B9FE9277DEF640076D0F6 /* RequestObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

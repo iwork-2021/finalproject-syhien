@@ -7,11 +7,14 @@
 
 import UIKit
 import UniformTypeIdentifiers
+import SoundAnalysis
 
 class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
     
     var coreDataConnect: CoreDataConnect! = nil
     var allTableView: UITableView?
+    var model: MLModel!
+    var audioFileAnalyzer: SNAudioFileAnalyzer!
 
     @IBOutlet weak var URLInputField: UITextField!
     @IBOutlet weak var RenameInputField: UITextField!
@@ -22,6 +25,13 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
         // Do any additional setup after loading the view.
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         coreDataConnect = CoreDataConnect(context: context)
+        
+        do {
+            let soundClassifier = try l1stenSoundClassifier(configuration: MLModelConfiguration())
+            model = soundClassifier.model
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     @IBAction func AddFromURL(_ sender: UIButton) {
@@ -42,10 +52,26 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
                 if self.coreDataConnect.insert(data: music, fileName: self.RenameInputField.text!, genre: "pop") {
                     print("成功添加")
                 }
-                try FileManager.default.removeItem(at: savedURL)
+//                try FileManager.default.removeItem(at: savedURL)
                 DispatchQueue.main.async {
                     self.allTableView?.reloadData()
                 }
+                
+                // 开始识别
+                do {
+                    self.audioFileAnalyzer = try SNAudioFileAnalyzer(url: savedURL)
+                } catch {
+                    print(error.localizedDescription)
+                }
+                let resultsObserver = ResultsObserver()
+                do {
+                    let request = try SNClassifySoundRequest(mlModel: self.model)
+                    try self.audioFileAnalyzer.add(request, withObserver: resultsObserver)
+                } catch {
+                    print(error.localizedDescription)
+                }
+                self.audioFileAnalyzer.analyze()
+                print(resultsObserver.classificationResult)
             } catch {
                 print(error.localizedDescription)
             }
@@ -82,3 +108,4 @@ extension AddMusicViewController {
         print(url.absoluteString)
     }
 }
+
