@@ -30,19 +30,35 @@
         <!--所有音乐-->
         <scene sceneID="YmU-q2-unv">
             <objects>
-                <tableViewController id="z5k-Kg-ePB" sceneMemberID="viewController">
+                <tableViewController id="z5k-Kg-ePB" customClass="AllTableViewController" customModule="l1stener" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="m2q-79-7TB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pN3-Xr-zyu">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MusicCell" id="pN3-Xr-zyu" customClass="MusicTableViewCell" customModule="l1stener" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pN3-Xr-zyu" id="kB2-Ae-WL5">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygf-TM-B6u">
+                                            <rect key="frame" x="186" y="10.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ygf-TM-B6u" firstAttribute="centerY" secondItem="kB2-Ae-WL5" secondAttribute="centerY" id="Rfw-qD-aNA"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ygf-TM-B6u" secondAttribute="trailing" constant="20" id="Zgc-jF-Nwe"/>
+                                        <constraint firstItem="Ygf-TM-B6u" firstAttribute="leading" secondItem="kB2-Ae-WL5" secondAttribute="leading" constant="20" id="dgE-Di-bsf"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="Ygf-TM-B6u" id="BgM-U8-jvY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -51,7 +67,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="所有音乐" id="Cmc-g5-cGu">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Nns-Fk-AgJ"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Nns-Fk-AgJ">
+                            <connections>
+                                <action selector="testTouched:" destination="z5k-Kg-ePB" id="ROr-9h-iYn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfw-bM-yEm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

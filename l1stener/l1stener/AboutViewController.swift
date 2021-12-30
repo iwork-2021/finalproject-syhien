@@ -33,13 +33,15 @@ class AboutViewController: UIViewController {
             guard let fileURl = url else { return }
             do {
                 let documentsURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-//                let savedURL = documentsURL.appendingPathComponent(fileURl.lastPathComponent)
                 let savedURL = documentsURL.appendingPathComponent("okinodokusama.wav")
+                print(fileURl)
+                print(savedURL)
                 try FileManager.default.moveItem(at: fileURl, to: savedURL)
                 let music = try Data(contentsOf: savedURL)
                 if coreDataConnect.insert(data: music, fileName: "okinodokusama.wav", genre: "pop") {
                     print("成功添加示例wav")
                 }
+                try FileManager.default.removeItem(at: savedURL)
             } catch {
                 print(error.localizedDescription)
             }
