@@ -1,3 +1,5 @@
+**注意**：虚拟机无法测试“从设备导入音乐”功能（不是我的问题是simulator的问题）
+
 [Data Set](https://www.kaggle.com/andradaolteanu/gtzan-dataset-music-genre-classification)
 
 [Download Data Set](https://box.nju.edu.cn/f/c15c0498710f49b0a4da/?dl=1)
