@@ -48,14 +48,6 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
                 print(fileURl)
                 print(savedURL)
                 try FileManager.default.moveItem(at: fileURl, to: savedURL)
-                let music = try Data(contentsOf: savedURL)
-                if self.coreDataConnect.insert(data: music, fileName: self.RenameInputField.text!, genre: "pop") {
-                    print("成功添加")
-                }
-//                try FileManager.default.removeItem(at: savedURL)
-                DispatchQueue.main.async {
-                    self.allTableView?.reloadData()
-                }
                 
                 // 开始识别
                 do {
@@ -71,7 +63,16 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
                     print(error.localizedDescription)
                 }
                 self.audioFileAnalyzer.analyze()
-                print(resultsObserver.classificationResult)
+                let genre = resultsObserver.domainGenre()
+                print("genre is \(genre)")
+                let music = try Data(contentsOf: savedURL)
+                if self.coreDataConnect.insert(data: music, fileName: self.RenameInputField.text!, genre: genre) {
+                    print("成功添加")
+                }
+                DispatchQueue.main.async {
+                    self.allTableView?.reloadData()
+                }
+                try FileManager.default.removeItem(at: savedURL)
             } catch {
                 print(error.localizedDescription)
             }

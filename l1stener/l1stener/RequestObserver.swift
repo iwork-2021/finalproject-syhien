@@ -14,6 +14,18 @@ class ResultsObserver : NSObject, SNResultsObserving {
     var classificationResult = String()
     var classificationConfidence = Double()
     
+    var counts: [String:Int] = ["blues":0,
+                                "classical":0,
+                                "country":0,
+                                "disco":0,
+                                "hiphop":0,
+                                "jazz":0,
+                                "metal":0,
+                                "pop":0,
+                                "reggae":0,
+                                "rock":0,
+    ]
+    
     func request(_ request: SNRequest, didProduce result: SNResult) {
         
         // Get the top classification.
@@ -32,6 +44,12 @@ class ResultsObserver : NSObject, SNResultsObserving {
         
         classificationResult = classification.identifier
         classificationConfidence = confidence
+        
+        counts[classification.identifier]! += 1
+    }
+    
+    func domainGenre() -> String {
+        return counts.sorted(by: { $0.1 > $1.1 }).first!.key
     }
     
     func request(_ request: SNRequest, didFailWithError error: Error) {
