@@ -86,7 +86,39 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
         types.append(UTType(tag: "mp3", tagClass: .filenameExtension, conformingTo: nil)!)
         let docPicker = UIDocumentPickerViewController(forOpeningContentTypes: types)
         docPicker.delegate = self
-        self.show(docPicker, sender: nil)
+        present(docPicker, animated: true)
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        let url = urls[0]
+        print(url)
+        do {
+            do {
+                self.audioFileAnalyzer = try SNAudioFileAnalyzer(url: url)
+            } catch {
+                print(error.localizedDescription)
+            }
+            let resultsObserver = ResultsObserver()
+            do {
+                let request = try SNClassifySoundRequest(mlModel: self.model)
+                try self.audioFileAnalyzer.add(request, withObserver: resultsObserver)
+            } catch {
+                print(error.localizedDescription)
+            }
+            self.audioFileAnalyzer.analyze()
+            let genre = resultsObserver.domainGenre()
+            print("genre is \(genre)")
+            let music = try Data(contentsOf: url)
+            print(url.lastPathComponent)
+            if self.coreDataConnect.insert(data: music, fileName: url.lastPathComponent, genre: genre) {
+                print("成功添加")
+            }
+            DispatchQueue.main.async {
+                self.allTableView?.reloadData()
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     /*
@@ -100,13 +132,3 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
     */
 
 }
-
-extension AddMusicViewController {
-    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        let url = urls[0]
-        print(url)
-        print(url.absoluteURL)
-        print(url.absoluteString)
-    }
-}
-
