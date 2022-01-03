@@ -84,20 +84,16 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
     @IBAction func AddFromDevice(_ sender: Any) {
         var types = UTType.types(tag: "wav", tagClass: .filenameExtension, conformingTo: nil)
         types.append(UTType(tag: "mp3", tagClass: .filenameExtension, conformingTo: nil)!)
-        let docPicker = UIDocumentPickerViewController(forOpeningContentTypes: types)
+        let docPicker = UIDocumentPickerViewController(forOpeningContentTypes: types, asCopy: true)
         docPicker.delegate = self
         present(docPicker, animated: true)
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        let url = urls[0]
+        let url = URL(string: urls[0].absoluteString)!
         print(url)
         do {
-            do {
-                self.audioFileAnalyzer = try SNAudioFileAnalyzer(url: url)
-            } catch {
-                print(error.localizedDescription)
-            }
+            self.audioFileAnalyzer = try SNAudioFileAnalyzer(url: url)
             let resultsObserver = ResultsObserver()
             do {
                 let request = try SNClassifySoundRequest(mlModel: self.model)
@@ -119,6 +115,7 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
         } catch {
             print(error.localizedDescription)
         }
+        self.navigationController?.popViewController(animated: true)
     }
     
     /*
