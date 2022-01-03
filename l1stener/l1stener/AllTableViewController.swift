@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import AVFAudio
 
-class AllTableViewController: UITableViewController {
+class AllTableViewController: UITableViewController, AVAudioPlayerDelegate {
 
     var coreDataConnect: CoreDataConnect! = nil
     var allMusic: [Music]! = nil
+    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,10 @@ class AllTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        audioPlayer.pause()
     }
 
     // MARK: - Table view data source
@@ -54,6 +60,17 @@ class AllTableViewController: UITableViewController {
         cell.label.text = allMusic[indexPath.row].fileName
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        do {
+            audioPlayer = try AVAudioPlayer(data: coreDataConnect.getMusic(fileName: allMusic[indexPath.row].fileName!))
+            audioPlayer.delegate = self
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     /*

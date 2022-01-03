@@ -130,4 +130,20 @@ class CoreDataConnect {
         }
         return music
     }
+    
+    // get music by name
+    func getMusic(fileName: String) -> Data {
+        let request = NSFetchRequest<Music>(entityName: "Music")
+        do {
+            let results = try myContext.fetch(request)
+            for result in results {
+                if result.fileName == fileName {
+                    return result.data!
+                }
+            }
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        return Data()
+    }
 }
