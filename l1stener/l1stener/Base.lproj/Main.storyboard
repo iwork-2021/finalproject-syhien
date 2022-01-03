@@ -181,19 +181,35 @@
         <!--按流派分类-->
         <scene sceneID="pCi-A6-K4e">
             <objects>
-                <tableViewController id="kLo-g9-pQj" sceneMemberID="viewController">
+                <tableViewController id="kLo-g9-pQj" customClass="GenreTableViewController" customModule="l1stener" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Uc0-8V-yMD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aY1-8e-Ga3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenreMusicCell" id="aY1-8e-Ga3" customClass="GenreMusicTableViewCell" customModule="l1stener" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aY1-8e-Ga3" id="y2K-vP-haA">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSt-AH-RCS">
+                                            <rect key="frame" x="186" y="10.5" width="44" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RSt-AH-RCS" firstAttribute="centerY" secondItem="y2K-vP-haA" secondAttribute="centerY" id="RH5-Mp-TWJ"/>
+                                        <constraint firstItem="RSt-AH-RCS" firstAttribute="leading" secondItem="y2K-vP-haA" secondAttribute="leading" constant="20" id="e7n-Fe-2Bz"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="RSt-AH-RCS" id="w6m-NZ-08W"/>
+                                    <segue destination="ZtX-y1-ynj" kind="show" id="gCn-LZ-RTb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -202,12 +218,61 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="按流派分类" id="k4o-hW-hBp">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Xh2-N5-VT0"/>
+                        <barButtonItem key="rightBarButtonItem" image="arrow.clockwise" catalog="system" id="Xh2-N5-VT0">
+                            <connections>
+                                <action selector="reloadTouched:" destination="kLo-g9-pQj" id="Yuu-e3-5cT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4t-4N-Khf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="741" y="74"/>
+        </scene>
+        <!--Single Genre Table View Controller-->
+        <scene sceneID="bXn-8x-JT7">
+            <objects>
+                <tableViewController id="ZtX-y1-ynj" customClass="SingleGenreTableViewController" customModule="l1stener" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="2tI-oF-wfl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MusicCell" id="JQi-8d-NOs" customClass="MusicTableViewCell" customModule="l1stener" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JQi-8d-NOs" id="mkh-D8-4bR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gM7-Ob-IQG">
+                                            <rect key="frame" x="186" y="10.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="gM7-Ob-IQG" secondAttribute="trailing" constant="20" id="JRS-gH-xJ0"/>
+                                        <constraint firstItem="gM7-Ob-IQG" firstAttribute="centerY" secondItem="mkh-D8-4bR" secondAttribute="centerY" id="ULk-2K-SXF"/>
+                                        <constraint firstItem="gM7-Ob-IQG" firstAttribute="leading" secondItem="mkh-D8-4bR" secondAttribute="leading" constant="20" id="hDO-fj-hrJ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="gM7-Ob-IQG" id="8wA-Mo-oaS"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZtX-y1-ynj" id="mr5-3C-CUu"/>
+                            <outlet property="delegate" destination="ZtX-y1-ynj" id="Xcz-hf-6Dr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="5Dy-rp-Wms"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PVq-dU-NDX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="74"/>
         </scene>
         <!--关于-->
         <scene sceneID="QNa-C1-5X3">
@@ -286,6 +351,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="music.note.house" catalog="system" width="128" height="106"/>
         <image name="music.quarternote.3" catalog="system" width="128" height="103"/>

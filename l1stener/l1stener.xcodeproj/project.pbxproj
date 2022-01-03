@@ -20,6 +20,9 @@
 		7CEC4A0B27799B3500E05348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEC4A0927799B3500E05348 /* Main.storyboard */; };
 		7CEC4A0D27799B3600E05348 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CEC4A0C27799B3600E05348 /* Assets.xcassets */; };
 		7CEC4A1027799B3600E05348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEC4A0E27799B3600E05348 /* LaunchScreen.storyboard */; };
+		7CFED5A5278320B9008C68E3 /* GenreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED5A4278320B9008C68E3 /* GenreTableViewController.swift */; };
+		7CFED5A72783230C008C68E3 /* GenreMusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED5A62783230C008C68E3 /* GenreMusicTableViewCell.swift */; };
+		7CFED5A927832589008C68E3 /* SingleGenreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED5A827832589008C68E3 /* SingleGenreTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		7CEC4A0C27799B3600E05348 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CEC4A0F27799B3600E05348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CEC4A1127799B3600E05348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CFED5A4278320B9008C68E3 /* GenreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTableViewController.swift; sourceTree = "<group>"; };
+		7CFED5A62783230C008C68E3 /* GenreMusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreMusicTableViewCell.swift; sourceTree = "<group>"; };
+		7CFED5A827832589008C68E3 /* SingleGenreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGenreTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +76,15 @@
 		7CEC4A0227799B3400E05348 /* l1stener */ = {
 			isa = PBXGroup;
 			children = (
+				7CFED5A827832589008C68E3 /* SingleGenreTableViewController.swift */,
+				7CFED5A62783230C008C68E3 /* GenreMusicTableViewCell.swift */,
 				7C8B9FBC277D94DE0076D0F6 /* AllTableViewController.swift */,
 				7C8B9FBE277D95AC0076D0F6 /* MusicTableViewCell.swift */,
 				7CEC4A0327799B3500E05348 /* AppDelegate.swift */,
 				7CEC4A0527799B3500E05348 /* SceneDelegate.swift */,
 				7CEB6315277C526100DB3FC2 /* CoreDataConnect.swift */,
 				7CEC4A0927799B3500E05348 /* Main.storyboard */,
+				7CFED5A4278320B9008C68E3 /* GenreTableViewController.swift */,
 				7C8B9FC0277DA4BD0076D0F6 /* AddMusicViewController.swift */,
 				7C8B9FE8277DEF640076D0F6 /* RequestObserver.swift */,
 				7CEB62EF277C49A200DB3FC2 /* l1stenerModel.xcdatamodeld */,
@@ -164,9 +173,12 @@
 				7CEB62F1277C49A200DB3FC2 /* l1stenerModel.xcdatamodeld in Sources */,
 				7C8B9FC3277DD0310076D0F6 /* l1stenSoundClassifier.mlmodel in Sources */,
 				7CEC4A0427799B3500E05348 /* AppDelegate.swift in Sources */,
+				7CFED5A927832589008C68E3 /* SingleGenreTableViewController.swift in Sources */,
 				7C8B9FBD277D94DE0076D0F6 /* AllTableViewController.swift in Sources */,
 				7C8B9FBF277D95AC0076D0F6 /* MusicTableViewCell.swift in Sources */,
 				7CEC4A0627799B3500E05348 /* SceneDelegate.swift in Sources */,
+				7CFED5A5278320B9008C68E3 /* GenreTableViewController.swift in Sources */,
+				7CFED5A72783230C008C68E3 /* GenreMusicTableViewCell.swift in Sources */,
 				7CEB6316277C526100DB3FC2 /* CoreDataConnect.swift in Sources */,
 				7C8B9FE9277DEF640076D0F6 /* RequestObserver.swift in Sources */,
 			);
