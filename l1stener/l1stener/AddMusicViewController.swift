@@ -50,11 +50,7 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
                 try FileManager.default.moveItem(at: fileURl, to: savedURL)
                 
                 // 开始识别
-                do {
-                    self.audioFileAnalyzer = try SNAudioFileAnalyzer(url: savedURL)
-                } catch {
-                    print(error.localizedDescription)
-                }
+                self.audioFileAnalyzer = try SNAudioFileAnalyzer(url: savedURL)
                 let resultsObserver = ResultsObserver()
                 do {
                     let request = try SNClassifySoundRequest(mlModel: self.model)
