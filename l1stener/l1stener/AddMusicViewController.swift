@@ -79,7 +79,7 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBAction func AddFromDevice(_ sender: Any) {
         var types = UTType.types(tag: "wav", tagClass: .filenameExtension, conformingTo: nil)
-        types.append(UTType(tag: "mp3", tagClass: .filenameExtension, conformingTo: nil)!)
+//        types.append(UTType(tag: "mp3", tagClass: .filenameExtension, conformingTo: nil)!)
         let docPicker = UIDocumentPickerViewController(forOpeningContentTypes: types, asCopy: true)
         docPicker.delegate = self
         present(docPicker, animated: true)
