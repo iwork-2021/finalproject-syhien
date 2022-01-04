@@ -7,10 +7,13 @@
 
 import Foundation
 import SoundAnalysis
+import UIKit
 
 // Observer object that is called as analysis results are found.
 class ResultsObserver : NSObject, SNResultsObserving {
     
+    var classLabel: UILabel?
+    var confidenceLabel: UILabel?
     var classificationResult = String()
     var classificationConfidence = Double()
     
@@ -44,6 +47,9 @@ class ResultsObserver : NSObject, SNResultsObserving {
         
         classificationResult = classification.identifier
         classificationConfidence = confidence
+        
+        classLabel?.text = classification.identifier
+        confidenceLabel?.text = String(confidence)
         
         counts[classification.identifier]! += 1
     }

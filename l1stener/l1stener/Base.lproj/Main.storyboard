@@ -20,6 +20,7 @@
                     <connections>
                         <segue destination="Aev-iX-jT4" kind="relationship" relationship="viewControllers" id="YSK-K1-C9t"/>
                         <segue destination="Hgi-aR-XCg" kind="relationship" relationship="viewControllers" id="74v-JD-OlT"/>
+                        <segue destination="VFF-Ge-t5X" kind="relationship" relationship="viewControllers" id="nMc-yb-Qaa"/>
                         <segue destination="Jp5-1U-rAg" kind="relationship" relationship="viewControllers" id="4zt-Yh-Aiu"/>
                     </connections>
                 </tabBarController>
@@ -315,6 +316,56 @@
             </objects>
             <point key="canvasLocation" x="-1122" y="455"/>
         </scene>
+        <!--识别-->
+        <scene sceneID="DjV-S9-Y8O">
+            <objects>
+                <viewController title="识别" id="VFF-Ge-t5X" customClass="ListenClassifierViewController" customModule="l1stener" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lV2-PK-rnz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分类" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecP-oC-sa6">
+                                <rect key="frame" x="160" y="194" width="94.5" height="56.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="概率" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcO-V7-GH4">
+                                <rect key="frame" x="182.5" y="330.5" width="49" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6U-UG-X3U">
+                                <rect key="frame" x="173.5" y="702" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="classifyTouched:" destination="VFF-Ge-t5X" eventType="touchUpInside" id="bia-zY-EhM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CPl-7p-UKm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T6U-UG-X3U" firstAttribute="centerX" secondItem="CPl-7p-UKm" secondAttribute="centerX" id="GQk-Bh-Xrg"/>
+                            <constraint firstItem="ecP-oC-sa6" firstAttribute="top" secondItem="CPl-7p-UKm" secondAttribute="top" constant="150" id="ONo-Kh-c2H"/>
+                            <constraint firstItem="CPl-7p-UKm" firstAttribute="bottom" secondItem="T6U-UG-X3U" secondAttribute="bottom" constant="80" id="QPb-kj-pLE"/>
+                            <constraint firstItem="tcO-V7-GH4" firstAttribute="top" secondItem="ecP-oC-sa6" secondAttribute="bottom" constant="80" id="iw2-HE-xyj"/>
+                            <constraint firstItem="tcO-V7-GH4" firstAttribute="centerX" secondItem="CPl-7p-UKm" secondAttribute="centerX" id="s5J-6W-mdD"/>
+                            <constraint firstItem="ecP-oC-sa6" firstAttribute="centerX" secondItem="CPl-7p-UKm" secondAttribute="centerX" id="tO6-fX-1te"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="听曲试流派" image="ear" catalog="system" id="Dxs-TB-vRg"/>
+                    <connections>
+                        <outlet property="confidenceLabel" destination="tcO-V7-GH4" id="MMw-2T-pki"/>
+                        <outlet property="resultLabel" destination="ecP-oC-sa6" id="Sd9-z2-jjg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OTB-ar-2ZE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-149" y="731"/>
+        </scene>
         <!--流派-->
         <scene sceneID="vTX-0F-FY9">
             <objects>
@@ -352,6 +403,7 @@
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="ear" catalog="system" width="105" height="128"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="music.note.house" catalog="system" width="128" height="106"/>
         <image name="music.quarternote.3" catalog="system" width="128" height="103"/>

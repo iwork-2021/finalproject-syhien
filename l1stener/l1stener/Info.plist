@@ -6,6 +6,8 @@
 	<true/>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>To play music</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>To classify music</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
