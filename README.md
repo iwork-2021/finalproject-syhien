@@ -2,7 +2,7 @@
 
 [Data Set](https://www.kaggle.com/andradaolteanu/gtzan-dataset-music-genre-classification)
 
-[Download Data Set](https://box.nju.edu.cn/f/c15c0498710f49b0a4da/?dl=1)
+[Download Data Set](https://box.nju.edu.cn/f/824f01929b504dcababa/?dl=1)
 
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6626616&assignment_repo_type=AssignmentRepo)
 # iOS智能开发大作业
