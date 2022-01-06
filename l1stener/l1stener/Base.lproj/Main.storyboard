@@ -319,7 +319,7 @@
         <!--识别-->
         <scene sceneID="DjV-S9-Y8O">
             <objects>
-                <viewController title="识别" id="VFF-Ge-t5X" customClass="ListenClassifierViewController" customModule="l1stener" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="识别" id="VFF-Ge-t5X" customClass="ListenClassifyViewController" customModule="l1stener" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lV2-PK-rnz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,21 +336,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6U-UG-X3U">
-                                <rect key="frame" x="173.5" y="702" width="67" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <action selector="classifyTouched:" destination="VFF-Ge-t5X" eventType="touchUpInside" id="bia-zY-EhM"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CPl-7p-UKm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="T6U-UG-X3U" firstAttribute="centerX" secondItem="CPl-7p-UKm" secondAttribute="centerX" id="GQk-Bh-Xrg"/>
                             <constraint firstItem="ecP-oC-sa6" firstAttribute="top" secondItem="CPl-7p-UKm" secondAttribute="top" constant="150" id="ONo-Kh-c2H"/>
-                            <constraint firstItem="CPl-7p-UKm" firstAttribute="bottom" secondItem="T6U-UG-X3U" secondAttribute="bottom" constant="80" id="QPb-kj-pLE"/>
                             <constraint firstItem="tcO-V7-GH4" firstAttribute="top" secondItem="ecP-oC-sa6" secondAttribute="bottom" constant="80" id="iw2-HE-xyj"/>
                             <constraint firstItem="tcO-V7-GH4" firstAttribute="centerX" secondItem="CPl-7p-UKm" secondAttribute="centerX" id="s5J-6W-mdD"/>
                             <constraint firstItem="ecP-oC-sa6" firstAttribute="centerX" secondItem="CPl-7p-UKm" secondAttribute="centerX" id="tO6-fX-1te"/>
@@ -358,8 +348,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="听曲试流派" image="ear" catalog="system" id="Dxs-TB-vRg"/>
                     <connections>
-                        <outlet property="confidenceLabel" destination="tcO-V7-GH4" id="MMw-2T-pki"/>
-                        <outlet property="resultLabel" destination="ecP-oC-sa6" id="Sd9-z2-jjg"/>
+                        <outlet property="confidenceLabel" destination="tcO-V7-GH4" id="AoB-F8-4gR"/>
+                        <outlet property="predictLabel" destination="ecP-oC-sa6" id="XNH-Jv-azk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTB-ar-2ZE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

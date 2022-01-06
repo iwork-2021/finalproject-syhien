@@ -48,8 +48,10 @@ class ResultsObserver : NSObject, SNResultsObserving {
         classificationResult = classification.identifier
         classificationConfidence = confidence
         
-        classLabel?.text = classification.identifier
-        confidenceLabel?.text = String(confidence)
+        DispatchQueue.main.async {
+            self.classLabel?.text = classification.identifier
+            self.confidenceLabel?.text = String(confidence)
+        }
         
         counts[classification.identifier]! += 1
     }
