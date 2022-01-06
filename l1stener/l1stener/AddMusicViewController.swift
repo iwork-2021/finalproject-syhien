@@ -32,6 +32,11 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
         } catch {
             print(error.localizedDescription)
         }
+        
+        let alertController = UIAlertController(title: "导入格式受限", message: "仅支持wav格式的音乐导入", preferredStyle: .alert)
+        let sureAction = UIAlertAction(title: "了解", style: .default)
+        alertController.addAction(sureAction)
+        present(alertController, animated: true)
     }
     
     @IBAction func AddFromURL(_ sender: UIButton) {
@@ -44,7 +49,11 @@ class AddMusicViewController: UIViewController, UIDocumentPickerDelegate {
             guard let fileURl = url else { return }
             do {
                 let documentsURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-                let savedURL = documentsURL.appendingPathComponent(self.RenameInputField.text!)
+                var renamedName = self.RenameInputField.text!
+                if renamedName.contains(".wav") == false {
+                    renamedName.append(".wav")
+                }
+                let savedURL = documentsURL.appendingPathComponent(renamedName)
                 print(fileURl)
                 print(savedURL)
                 try FileManager.default.moveItem(at: fileURl, to: savedURL)
