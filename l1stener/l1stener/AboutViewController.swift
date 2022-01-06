@@ -25,8 +25,6 @@ class AboutViewController: UIViewController {
         textString.append(NSAttributedString(string: "\n\n\n"))
         text.attributedText = textString
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let coreDataConnect = CoreDataConnect(context: context)
         
 //        print("测试一下core data")
 //        let downloadTask = URLSession.shared.downloadTask(with: URL(string: "https://box.nju.edu.cn/f/f4a9a4d53b9e47e2a92d/?dl=1")!) { url, response, error in
