@@ -4,6 +4,10 @@
 
 [Download Data Set](https://box.nju.edu.cn/f/824f01929b504dcababa/?dl=1)
 
+[演示视频](https://www.bilibili.com/video/BV1Dm4y1D7Wd/)
+
+[报告](report/report.md)
+
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6626616&assignment_repo_type=AssignmentRepo)
 # iOS智能开发大作业
   基于本学期所学知识，任选下列任务中的一项进行App开发
